@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "51867136454",
+    "project_id": "dyatel-app",
+    "storage_bucket": "dyatel-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51867136454:android:4bc93e6cf08311985d42c7",
+        "android_client_info": {
+          "package_name": "com.example.dyatel_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51867136454-pi9s9uvb3h11uqfcts0cpsvkaqq9a93b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dyatel_app",
+            "certificate_hash": "c20be0ba213e0fe675d09f726e9963aa206091e4"
+          }
+        },
+        {
+          "client_id": "51867136454-cuiud32el2i0hhi59ekravukk2md6k8a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACrkqa23nksTp3nsvUauVCJZrx01dYBow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51867136454-cuiud32el2i0hhi59ekravukk2md6k8a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
