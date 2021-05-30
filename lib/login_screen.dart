@@ -34,13 +34,11 @@ class _LoginPageState extends State<LoginScreen> {
       onPressed: () {
         signInWithGoogle().then((result) {
           if (result != null) {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (context) {
-                  return HomeScreen();
-                },
-              ),
-            );
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(
+              builder: (context) {
+                return HomeScreen();
+              },
+            ), (route) => false);
           }
         });
       },

@@ -1,5 +1,10 @@
 import 'package:dyatel_app/add_image_screen.dart';
+import 'package:dyatel_app/reported_incidents.dart';
 import 'package:flutter/material.dart';
+
+import 'services/DatabaseHandler.dart';
+
+DatabaseHandler handler = DatabaseHandler();
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
@@ -12,18 +17,16 @@ class _HomeScreen extends State<HomeScreen> {
   int _selectedIndex = 1;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  _HomeScreen() {
+    handler.initializeDB();
+  }
+
   List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    ReportedIncidents(),
     AddImage(),
     Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
+      'Achievments',
       style: optionStyle,
     ),
   ];

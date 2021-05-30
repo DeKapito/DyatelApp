@@ -1,9 +1,14 @@
+import 'dart:io';
+
+import 'package:dyatel_app/map_screen.dart';
 import 'package:flutter/material.dart';
 
 class ReportIncident extends StatelessWidget {
-  final Image image;
+  final File image;
 
-  ReportIncident({Image image}) : this.image = image;
+  final textController = TextEditingController();
+
+  ReportIncident({File image}) : this.image = image;
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +24,8 @@ class ReportIncident extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
               child: ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 350),
-                child: image,
+                constraints: BoxConstraints(maxHeight: 250),
+                child: Image.file(image),
               ),
             ),
             // image,
@@ -28,6 +33,7 @@ class ReportIncident extends StatelessWidget {
               padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
               child: TextField(
                 maxLines: 6,
+                controller: textController,
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Enter a description of incident'),
@@ -43,7 +49,18 @@ class ReportIncident extends StatelessWidget {
                         foregroundColor: MaterialStateProperty.all<Color>(
                             Colors.amber[800])),
                     child: Text('Next Step'),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return MapScreen(
+                              image: image,
+                              description: Text(textController.text),
+                            );
+                          },
+                        ),
+                      );
+                    },
                   )),
             )
           ],

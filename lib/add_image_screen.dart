@@ -10,8 +10,8 @@ class AddImage extends StatelessWidget {
     final PickedFile pickedFile =
         await picker.getImage(source: ImageSource.camera);
 
-    if (pickedFile.path != null) {
-      return Image.file(File(pickedFile.path));
+    if (pickedFile != null) {
+      return File(pickedFile.path);
     }
   }
 
@@ -19,8 +19,9 @@ class AddImage extends StatelessWidget {
     final PickedFile pickedFile =
         await picker.getImage(source: ImageSource.gallery);
 
-    if (pickedFile.path != null) {
-      return Image.file(File(pickedFile.path));
+    if (pickedFile != null) {
+      print(File(pickedFile.path).path);
+      return File(pickedFile.path);
     }
   }
 
@@ -52,8 +53,9 @@ class AddImage extends StatelessWidget {
                               onTap: () async {
                                 print("Clicked Camera");
                                 var pickedImage = await _getImageFromCamera();
-                                if (pickedImage != null) {
+                                if (pickedImage == null) {
                                   Navigator.of(context).pop;
+                                  return;
                                 }
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
@@ -70,8 +72,9 @@ class AddImage extends StatelessWidget {
                               onTap: () async {
                                 print("Clicked Gallery");
                                 var pickedImage = await _getImageFromGallery();
-                                if (pickedImage != null) {
+                                if (pickedImage == null) {
                                   Navigator.of(context).pop;
+                                  return;
                                 }
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
