@@ -1,3 +1,4 @@
+import 'package:dyatel_app/add_image_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,24 +17,7 @@ class _HomeScreen extends State<HomeScreen> {
       'Index 0: Home',
       style: optionStyle,
     ),
-    Material(
-        color: Colors.white,
-        child: Center(
-          child: Ink(
-            decoration: ShapeDecoration(
-              color: Colors.amber[800],
-              shape: CircleBorder(),
-            ),
-            child: IconButton(
-              iconSize: 200.0,
-              icon: const Icon(Icons.photo_camera),
-              color: Colors.white,
-              onPressed: () {
-                print("Photo Icon clicked");
-              },
-            ),
-          ),
-        )),
+    AddImage(),
     Text(
       'Index 1: Business',
       style: optionStyle,
