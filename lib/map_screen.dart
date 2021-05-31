@@ -52,7 +52,7 @@ class _MapScreenState extends State<MapScreen> {
           IconButton(
               onPressed: () async {
                 await mapController.currentLocation();
-                await mapController.zoom(5.0);
+                await mapController.zoom(10.0);
               },
               icon: Icon(Icons.my_location)),
         ],
